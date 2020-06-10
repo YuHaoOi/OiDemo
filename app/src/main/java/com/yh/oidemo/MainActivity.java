@@ -1,6 +1,7 @@
 package com.yh.oidemo;
 
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
@@ -28,6 +29,9 @@ public class MainActivity extends BaseActivity {
         List<String> funData = new ArrayList<>();
         Collections.addAll(funData, "FileMaker");
         funAdapter = new FunAdapter(funData);
+        LinearLayoutManager manager = new LinearLayoutManager(this);
+        manager.setOrientation(LinearLayoutManager.VERTICAL);
+        itemRecycleView.setLayoutManager(manager);
         itemRecycleView.setAdapter(funAdapter);
     }
 
@@ -41,9 +45,8 @@ public class MainActivity extends BaseActivity {
         ItemClickSupport.addTo(itemRecycleView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
             @Override
             public void onItemClicked(RecyclerView recyclerView, int position, View v) {
-                //这里的position从1开始
                 switch (position) {
-                    case 1:
+                    case 0:
                         FileMakerActivity.startActivity(MainActivity.this);
                         break;
                 }
