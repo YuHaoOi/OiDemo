@@ -60,6 +60,13 @@ public class FileMaker {
         return this.mainPath + "/" + autoCache + "/";
     }
 
+    /**
+     * 创建文件夹
+     *
+     * @param key 文件夹key
+     * @param name 文件夹名字
+     * @return 创建结果
+     */
     public int createFolder(int key, String name) {
         name = name.replaceAll("/", "");
         File file = new File(mainPath + "/" + name + "/");
