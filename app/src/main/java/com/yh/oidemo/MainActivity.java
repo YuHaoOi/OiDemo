@@ -6,6 +6,8 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.yh.basemodule.base.BaseActivity;
+import com.yh.oidemo.activitys.DrawTextActivity;
+import com.yh.oidemo.activitys.PathEffectActivity;
 import com.yh.oidemo.activitys.PathMeasureActivity;
 import com.yh.oidemo.util.ItemClickSupport;
 
@@ -28,7 +30,7 @@ public class MainActivity extends BaseActivity {
     protected void initViews() {
         itemRecycleView = findViewById(R.id.item_rv);
         List<String> funData = new ArrayList<>();
-        Collections.addAll(funData, "FileMaker", "PathMeasure");
+        Collections.addAll(funData, "FileMaker", "PathMeasure", "PathEffect", "DrawText");
         funAdapter = new FunAdapter(funData);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -52,6 +54,12 @@ public class MainActivity extends BaseActivity {
                         break;
                     case 1:
                         PathMeasureActivity.actionStart(MainActivity.this);
+                        break;
+                    case 2:
+                        PathEffectActivity.actionStart(MainActivity.this);
+                        break;
+                    case 3:
+                        DrawTextActivity.actionStart(MainActivity.this);
                         break;
                 }
             }

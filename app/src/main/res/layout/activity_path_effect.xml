@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/theme_padding"
+    tools:context=".activitys.PathEffectActivity">
+
+    <Button
+        android:id="@+id/dash_path_effect_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="DashPathEffect"
+        android:textAllCaps="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.yh.oidemo.views.PathPainterEffect
+        android:id="@+id/dash_paint_effect"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_width="300dp"
+        android:layout_height="300dp"/>
+
+</android.support.constraint.ConstraintLayout>

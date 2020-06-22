@@ -43,13 +43,14 @@ public class PathTan extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         mMeasure.getPosTan(mMeasure.getLength() * currentValue, pos, tan);
+        // 某个点的切线逆时针方向与x轴的角度
         float degrees = (float) (Math.atan2(tan[1], tan[0]) * 180.0 / Math.PI);
 
         canvas.save();
         canvas.translate(400, 400);
         canvas.drawPath(mPath, mPaint);
         canvas.drawCircle(pos[0], pos[1], 10, mPaint);
-        canvas.rotate(degrees);
+        canvas.rotate(degrees); // 旋转以后，这个点就在y轴（0， -200）的位置
         canvas.drawLine(0, -200, 300, -200, mPaint);
         canvas.restore();
     }
