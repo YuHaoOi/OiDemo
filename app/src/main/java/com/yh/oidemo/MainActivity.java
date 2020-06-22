@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.yh.basemodule.base.BaseActivity;
+import com.yh.oidemo.activitys.PathMeasureActivity;
 import com.yh.oidemo.util.ItemClickSupport;
 
 import java.util.ArrayList;
@@ -27,7 +28,7 @@ public class MainActivity extends BaseActivity {
     protected void initViews() {
         itemRecycleView = findViewById(R.id.item_rv);
         List<String> funData = new ArrayList<>();
-        Collections.addAll(funData, "FileMaker");
+        Collections.addAll(funData, "FileMaker", "PathMeasure");
         funAdapter = new FunAdapter(funData);
         LinearLayoutManager manager = new LinearLayoutManager(this);
         manager.setOrientation(LinearLayoutManager.VERTICAL);
@@ -48,6 +49,9 @@ public class MainActivity extends BaseActivity {
                 switch (position) {
                     case 0:
                         FileMakerActivity.startActivity(MainActivity.this);
+                        break;
+                    case 1:
+                        PathMeasureActivity.actionStart(MainActivity.this);
                         break;
                 }
             }
