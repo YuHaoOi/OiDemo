@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activitys.DrawTextActivity"></activity>
+        <activity android:name=".activitys.FlowLayoutActivity"></activity>
+        <activity android:name=".activitys.DrawTextActivity" />
         <activity android:name=".activitys.PathEffectActivity" />
         <activity android:name=".activitys.PathMeasureActivity" />
         <activity android:name=".FileMakerActivity" />
