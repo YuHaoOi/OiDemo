@@ -195,6 +195,9 @@ public class TagFlowLayout extends FlowLayout implements TagAdapter.OnDataChange
         return bundle;
     }
 
+    /**
+     * 屏幕旋转的时候，会重绘，这里恢复选中标签
+     */
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
         if (state instanceof Bundle) {
