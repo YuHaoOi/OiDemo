@@ -2,7 +2,6 @@ package com.yh.oidemo.flowlayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
-import android.support.v4.text.TextUtilsCompat;
 import android.util.AttributeSet;
 import android.util.LayoutDirection;
 import android.view.View;
@@ -14,6 +13,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
+
+import androidx.core.text.TextUtilsCompat;
 
 public class FlowLayout extends ViewGroup {
     private static final int LEFT = -1;
