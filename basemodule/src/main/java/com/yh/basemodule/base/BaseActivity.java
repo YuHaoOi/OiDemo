@@ -43,11 +43,10 @@ public abstract class BaseActivity extends AppCompatActivity implements OnTitleE
         initData();
     }
 
-    protected abstract void initViews();
+    protected void initViews(){}
+    protected void initEvents(){}
 
-    protected abstract void initEvents();
-
-    protected abstract void initData();
+    protected void initData(){}
 
     protected void showTitle(String name) {
         supportTitle(true);

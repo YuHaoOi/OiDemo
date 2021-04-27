@@ -15,21 +15,6 @@ public class XfermodeActivity extends BaseActivity {
         setContentView(R.layout.activity_xfermode);
     }
 
-    @Override
-    protected void initViews() {
-
-    }
-
-    @Override
-    protected void initEvents() {
-
-    }
-
-    @Override
-    protected void initData() {
-
-    }
-
     public static Intent getIntent(Context context) {
         return new Intent(context, XfermodeActivity.class);
     }

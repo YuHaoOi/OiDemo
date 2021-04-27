@@ -29,16 +29,6 @@ public class PathEffectActivity extends BaseActivity implements View.OnClickList
     }
 
     @Override
-    protected void initEvents() {
-
-    }
-
-    @Override
-    protected void initData() {
-
-    }
-
-    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.dash_path_effect_btn:

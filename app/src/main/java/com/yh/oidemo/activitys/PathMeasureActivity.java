@@ -9,13 +9,11 @@ import android.widget.Button;
 import com.yh.basemodule.base.BaseActivity;
 import com.yh.oidemo.R;
 import com.yh.oidemo.views.PathPainter;
-import com.yh.oidemo.views.PathPainter2;
 import com.yh.oidemo.views.PathTan;
 
 public class PathMeasureActivity extends BaseActivity implements View.OnClickListener {
 
     private PathPainter pathPainter;
-    private PathPainter2 pathPainter2;
     private PathTan pathTan;
 
     @Override
@@ -28,24 +26,11 @@ public class PathMeasureActivity extends BaseActivity implements View.OnClickLis
     protected void initViews() {
         Button getSegmentBtn = findViewById(R.id.get_segment_btn);
         getSegmentBtn.setOnClickListener(this);
-        Button getSegmentBtn2 = findViewById(R.id.get_segment_btn2);
-        getSegmentBtn2.setOnClickListener(this);
         Button pathTanBtn = findViewById(R.id.get_pos_tan);
         pathTanBtn.setOnClickListener(this);
 
         pathPainter = findViewById(R.id.path_painter1);
-        pathPainter2 = findViewById(R.id.path_painter2);
         pathTan = findViewById(R.id.path_tan);
-
-    }
-
-    @Override
-    protected void initEvents() {
-
-    }
-
-    @Override
-    protected void initData() {
 
     }
 
@@ -59,9 +44,6 @@ public class PathMeasureActivity extends BaseActivity implements View.OnClickLis
         switch (v.getId()){
             case R.id.get_segment_btn:
                 pathPainter.startAnim();
-                break;
-            case R.id.get_segment_btn2:
-                pathPainter2.startAnim();
                 break;
             case R.id.get_pos_tan:
                 pathTan.startAnim();

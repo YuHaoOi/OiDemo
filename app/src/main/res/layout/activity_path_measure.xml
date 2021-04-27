@@ -16,14 +16,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/get_segment_btn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAllCaps="false"
-        android:text="getSegment2"
-        app:layout_constraintStart_toEndOf="@id/get_segment_btn"
-        app:layout_constraintTop_toTopOf="parent"/>
 
     <Button
         android:id="@+id/get_pos_tan"
@@ -31,7 +23,7 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="getPosTan"
-        app:layout_constraintStart_toEndOf="@id/get_segment_btn2"
+        app:layout_constraintStart_toEndOf="@id/get_segment_btn"
         app:layout_constraintTop_toTopOf="parent"/>
 
     <com.yh.oidemo.views.PathPainter
@@ -41,18 +33,11 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent" />
 
-    <com.yh.oidemo.views.PathPainter2
-        android:id="@+id/path_painter2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toTopOf="@id/path_painter1"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
     <com.yh.oidemo.views.PathTan
         android:id="@+id/path_tan"
         android:layout_width="250dp"
         android:layout_height="250dp"
-        app:layout_constraintBottom_toTopOf="@id/path_painter2"
+        app:layout_constraintBottom_toTopOf="@id/path_painter1"
         app:layout_constraintStart_toStartOf="parent" />
 
 

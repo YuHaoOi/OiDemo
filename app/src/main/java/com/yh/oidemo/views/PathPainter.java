@@ -10,17 +10,12 @@ import android.util.AttributeSet;
 import android.view.View;
 
 public class PathPainter extends View {
-
     private Path mPath;
     private Paint mPaint;
     private PathMeasure mPathMeasure;
     private float mAnimatorValue;
     private Path mDst;
     private float mLength;
-
-    public PathPainter(Context context) {
-        super(context);
-    }
 
     public PathPainter(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -35,17 +30,13 @@ public class PathPainter extends View {
         mDst = new Path();
     }
 
-    public PathPainter(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
-
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        mDst.reset();
-        // 硬件加速的BUG
-        mDst.lineTo(0, 0);
+        mDst.reset(); // getSegment方法第3个参数为添加Path，所以这里清空之前的Path
+        mDst.lineTo(0, 0); // 解决硬件加速的BUG
         float stop = mLength * mAnimatorValue;
+        // 第一个参数为截取的起始位置，第二个参数为截取的结束位置，第三个参数为添加到的Path，第四个参数为表示添加的path起点与第三个path的末尾是否相连接
         mPathMeasure.getSegment(0, stop, mDst, true);
         canvas.drawPath(mDst, mPaint);
     }
