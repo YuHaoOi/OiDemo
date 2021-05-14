@@ -24,18 +24,7 @@ public class DrawTextActivity extends BaseActivity implements View.OnClickListen
     protected void initViews() {
         Button drawProgressBtn = findViewById(R.id.draw_progress_btn);
         drawProgressBtn.setOnClickListener(this);
-
         progressTextView = findViewById(R.id.progress_view);
-
-    }
-
-    @Override
-    protected void initEvents() {
-
-    }
-
-    @Override
-    protected void initData() {
 
     }
 

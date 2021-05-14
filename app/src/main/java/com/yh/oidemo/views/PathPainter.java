@@ -10,7 +10,6 @@ import android.util.AttributeSet;
 import android.view.View;
 
 public class PathPainter extends View {
-    private Path mPath;
     private Paint mPaint;
     private PathMeasure mPathMeasure;
     private float mAnimatorValue;
@@ -23,7 +22,7 @@ public class PathPainter extends View {
         mPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
         mPaint.setStyle(Paint.Style.STROKE);
         mPaint.setStrokeWidth(5);
-        mPath = new Path();
+        Path mPath = new Path();
         mPath.addCircle(400, 400, 100, Path.Direction.CW);
         mPathMeasure.setPath(mPath, true);
         mLength = mPathMeasure.getLength();
@@ -43,12 +42,9 @@ public class PathPainter extends View {
 
     public void startAnim() {
         ValueAnimator valueAnimator = ValueAnimator.ofFloat(0, 1);
-        valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
-            @Override
-            public void onAnimationUpdate(ValueAnimator valueAnimator) {
-                mAnimatorValue = (float) valueAnimator.getAnimatedValue();
-                invalidate();
-            }
+        valueAnimator.addUpdateListener(animator -> {
+            mAnimatorValue = (float) animator.getAnimatedValue();
+            invalidate();
         });
         valueAnimator.setDuration(2000);
         valueAnimator.setRepeatCount(ValueAnimator.INFINITE);

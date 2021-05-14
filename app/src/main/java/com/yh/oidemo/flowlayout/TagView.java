@@ -23,6 +23,7 @@ public class TagView extends FrameLayout implements Checkable {
 
     @Override
     public int[] onCreateDrawableState(int extraSpace) {
+        // 我们要把状态给加进去，就是上面定义的状态
         int[] states = super.onCreateDrawableState(extraSpace + 1);
         if (isChecked()) {
             // 如果选中，将父类的结果和选中状态合并之后返回

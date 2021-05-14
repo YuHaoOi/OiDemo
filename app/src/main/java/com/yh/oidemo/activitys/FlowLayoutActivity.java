@@ -16,7 +16,6 @@ import com.yh.oidemo.flowlayout.TagFlowLayout;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class FlowLayoutActivity extends BaseActivity {
 
@@ -48,36 +47,12 @@ public class FlowLayoutActivity extends BaseActivity {
             }
         });
 
-        mFlowLayout.setOnTagClickListener(new TagFlowLayout.OnTagClickListener() {
-            @Override
-            public void onTagClick(View view, int position, FlowLayout parent) {
-                Toast.makeText(FlowLayoutActivity.this, tags.get(position), Toast.LENGTH_SHORT).show();
-            }
-        });
+        mFlowLayout.setOnTagClickListener((view, position, parent) -> Toast.makeText(FlowLayoutActivity.this, tags.get(position), Toast.LENGTH_SHORT).show());
 
 
-        mFlowLayout.setOnSelectListener(new TagFlowLayout.OnSelectListener() {
-            @Override
-            public void onSelected(Set<Integer> selectPosSet) {
-                toast("choose:" + selectPosSet.toString());
-            }
-        });
+        mFlowLayout.setOnSelectListener(selectPosSet -> toast("choose:" + selectPosSet.toString()));
     }
 
-    @Override
-    protected void initViews() {
-
-    }
-
-    @Override
-    protected void initEvents() {
-
-    }
-
-    @Override
-    protected void initData() {
-
-    }
 
     public static Intent getIntent(Context context) {
         return new Intent(context, FlowLayoutActivity.class);

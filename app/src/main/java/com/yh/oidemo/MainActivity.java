@@ -49,7 +49,7 @@ public class MainActivity extends BaseActivity {
 
     // 查询字段相册封面，相册编号和自己定义的字段：相册编号数量
     private static final String[] PROJECTIONS = {MediaStore.Images.Media.DATA,
-            MediaStore.Images.Media.BUCKET_ID,  "COUNT(" + MediaStore.Images.Media.BUCKET_ID + ") as " + BUCKET_ID_COUNT};
+            MediaStore.Images.Media.BUCKET_ID, "COUNT(" + MediaStore.Images.Media.BUCKET_ID + ") as " + BUCKET_ID_COUNT};
 
     // 搜索条件：相册编号不为空，并且以相册编号分组，注意Android的Selection底层实际上用括号括起来的sql语句，所以这里括号可以对应
     private static final String SELECTION = MediaStore.Images.Media.BUCKET_ID + " is not null) group by (" + MediaStore.Images.Media.BUCKET_ID;
@@ -95,7 +95,6 @@ public class MainActivity extends BaseActivity {
                     case 6: // 材料设计
                         startActivity(MaterialDesignActivity.getIntent(MainActivity.this));
                         break;
-
                 }
             }
         });

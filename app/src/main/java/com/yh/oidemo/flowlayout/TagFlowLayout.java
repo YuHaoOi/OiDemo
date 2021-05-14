@@ -86,35 +86,33 @@ public class TagFlowLayout extends FlowLayout implements TagAdapter.OnDataChange
         TagAdapter adapter = mTagAdapter;
         TagView tagViewContainer;
         for (int i = 0; i < adapter.getCount(); i++) {
-            View tagView = adapter.getView(this, i, adapter.getItem(i));
+            View textView = adapter.getView(this, i, adapter.getItem(i));
             tagViewContainer = new TagView(getContext());
-            tagView.setDuplicateParentStateEnabled(true);
-            if (tagView.getLayoutParams() != null) {
-                tagViewContainer.setLayoutParams(tagView.getLayoutParams());
+            // 设置子view跟随父view的状态，这样当TagView设置选中时候，textView也会选中
+            textView.setDuplicateParentStateEnabled(true);
+            if (textView.getLayoutParams() != null) {
+                tagViewContainer.setLayoutParams(textView.getLayoutParams());
             } else {
                 MarginLayoutParams lp = new MarginLayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
                 lp.setMargins(dpToPx(5), dpToPx(5), dpToPx(5), dpToPx(5));
                 tagViewContainer.setLayoutParams(lp);
             }
             LayoutParams lp = new LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT);
-            tagView.setLayoutParams(lp);
-            tagViewContainer.addView(tagView);
+            textView.setLayoutParams(lp);
+            tagViewContainer.addView(textView);
             addView(tagViewContainer);
             if (mTagAdapter.setSelected(i, adapter.getItem(i))) {
                 setChildChecked(i, tagViewContainer);
             }
 
             // 容器处理点击事件
-            tagView.setClickable(false);
+            textView.setClickable(false);
             final TagView finalTagViewContainer = tagViewContainer;
             final int position = i;
-            tagViewContainer.setOnClickListener(new OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    doSelect(finalTagViewContainer, position);
-                    if (mOnTagClickListener != null) {
-                        mOnTagClickListener.onTagClick(finalTagViewContainer, position, TagFlowLayout.this);
-                    }
+            tagViewContainer.setOnClickListener(v -> {
+                doSelect(finalTagViewContainer, position);
+                if (mOnTagClickListener != null) {
+                    mOnTagClickListener.onTagClick(finalTagViewContainer, position, TagFlowLayout.this);
                 }
             });
         }
