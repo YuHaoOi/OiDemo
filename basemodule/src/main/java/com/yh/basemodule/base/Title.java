@@ -36,8 +36,8 @@ public class Title {
         this.titleEvent = event;
     }
 
-    private <T> T getView(int id) {
-        return (T) container.findViewById(id);
+    private <T extends View> T getView(int id) {
+        return container.findViewById(id);
     }
 
     public void setTitleText(CharSequence sequence) {

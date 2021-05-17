@@ -1,19 +1,22 @@
-package com.yh.oidemo;
+package com.yh.oidemo.adapters;
 
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.yh.oidemo.R;
+
 import java.util.List;
 
-class FunAdapter extends RecyclerView.Adapter<FunAdapter.ViewHolder> {
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
+public class FunAdapter extends RecyclerView.Adapter<FunAdapter.ViewHolder> {
 
     private List<String> tempData;
 
-    FunAdapter(@NonNull List<String> tempData) {
+    public FunAdapter(@NonNull List<String> tempData) {
         this.tempData = tempData;
     }
 

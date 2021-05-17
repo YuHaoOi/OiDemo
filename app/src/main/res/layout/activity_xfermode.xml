@@ -4,9 +4,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
     tools:context=".activitys.XfermodeActivity">
 
-    <com.yh.oidemo.views.XfermodeView
+    <com.yh.oidemo.views.XFermodeView
+        android:layout_width="200dp"
+        android:layout_height="200dp"/>
+
+
+    <com.yh.oidemo.views.XfermodeUseView
         android:layout_width="match_parent"
         android:layout_height="200dp"/>
 

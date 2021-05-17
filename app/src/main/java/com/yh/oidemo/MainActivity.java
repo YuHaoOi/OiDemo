@@ -11,6 +11,7 @@ import com.yh.oidemo.activitys.MaterialDesignActivity;
 import com.yh.oidemo.activitys.PathEffectActivity;
 import com.yh.oidemo.activitys.PathMeasureActivity;
 import com.yh.oidemo.activitys.XfermodeActivity;
+import com.yh.oidemo.adapters.FunAdapter;
 import com.yh.oidemo.util.ItemClickSupport;
 
 import java.util.ArrayList;
@@ -21,7 +22,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends BaseActivity {
-
     private RecyclerView itemRecycleView;
     private FunAdapter funAdapter;
 

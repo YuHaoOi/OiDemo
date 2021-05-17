@@ -15,6 +15,7 @@ public class XfermodeActivity extends BaseActivity {
         setContentView(R.layout.activity_xfermode);
     }
 
+
     public static Intent getIntent(Context context) {
         return new Intent(context, XfermodeActivity.class);
     }
